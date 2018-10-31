@@ -31,7 +31,7 @@ class Config extends Component {
                 className="form-control" 
                 type="range"
                 min="0"
-                max="60" 
+                max="59" 
                 defaultValue={this.props.baseTime.get('minutes')}
                 onChange={this.handleChange}
               />
