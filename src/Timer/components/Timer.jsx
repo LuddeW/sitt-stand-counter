@@ -25,6 +25,8 @@ class Timer extends Component {
     }
 
     componentWillMount(){
+        if(Push.Permission.has()) Push.Permission.get()
+
         localStorage.getItem('time') && this.setState({
             currentTime: moment.duration(localStorage.getItem('time')),
             baseTime: moment.duration(localStorage.getItem('time'))
@@ -87,6 +89,7 @@ class Timer extends Component {
         Push.create("Time to change the table", {
             body: "Time to stand or sit",
             timeout: 40000,
+            vibrate: [200,100,200]
         })
     }
 
